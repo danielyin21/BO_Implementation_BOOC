@@ -2,6 +2,8 @@
 
 
 import numpy as np
+import json
+import os
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import Matern
 from sklearn.gaussian_process.kernels import RBF
@@ -271,3 +273,13 @@ if __name__ == "__main__":
     max_utility, max_crew = max_satisfaction()
     print("The best crew is [{}, {}, {}, {}], the max value is {}".format(max_crew[0], max_crew[1], max_crew[2],
                                                                           max_crew[3], max_utility))
+
+    # print("best crew:", best_crew)
+
+    # Specify the file path
+    file_path = os.getcwd() + '/best_crew.json'
+
+    best_crew = np.array(best_crew)
+    # Write the data to the JSON file
+    with open(file_path, 'w') as file:
+        json.dump(best_crew.tolist(), file)
