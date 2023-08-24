@@ -277,7 +277,7 @@ if __name__ == "__main__":
     # print("best crew:", best_crew)
 
     # Specify the file path
-    file_path = os.getcwd() + '/best_crew.json'
+    file_path = os.getcwd() + '/BOOF_best_crew.json'
 
     best_crew = np.array(best_crew)
     # Write the data to the JSON file
